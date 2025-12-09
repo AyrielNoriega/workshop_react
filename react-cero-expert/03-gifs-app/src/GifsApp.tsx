@@ -13,7 +13,7 @@ export const GifsApp = () => {
       <SearchBard placeholder="Busca y comparte lo que quieras" />
 
       {/* Previous Searches */}
-      <PreviousSearches />
+      <PreviousSearches searches={["Goku", "gradon"]} />
 
       {/* Gifs */}
       <GifsList gifs={mockGifs} />

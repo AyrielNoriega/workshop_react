@@ -10,6 +10,10 @@ export const GifsApp = () => {
     console.log({ term });
   }
 
+  const handleSearch = (query: string) => {
+    console.log({ query });
+  }
+
   return (
     <>
       <CustomHeader
@@ -17,7 +21,10 @@ export const GifsApp = () => {
         description="Descubre y comparte el Gif perfecto"
       />
 
-      <SearchBard placeholder="Busca y comparte lo que quieras"  />
+      <SearchBard
+        placeholder="Busca y comparte lo que quieras"
+        onQuery={handleSearch}
+      />
 
       {/* Previous Searches */}
       <PreviousSearches searches={previousTerms} onLabelClick={(term: string) =>handleTermClick(term)}/>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GifsList, PreviousSearches } from "./gifs/components";
 import { mockGifs } from "./mock-data/gifs.mock";
 import { CustomHeader, SearchBard } from "./shared/components";
+import { getGifsByQueryAction } from "./gifs/actions/get-gifs-by-query.action";
 
 export const GifsApp = () => {
   const [previousTerms, setPreviousTerms] = useState(["dragon ball z"]);
@@ -10,7 +11,7 @@ export const GifsApp = () => {
     console.log({ term });
   };
 
-  const handleSearch = (query: string) => {
+  const handleSearch = async (query: string) => {
     console.log({ query });
     // validar que el array no este vacio
     if (query.trim().length === 0) return;
@@ -23,6 +24,9 @@ export const GifsApp = () => {
     if (previousTerms.length >= 8) return;
 
     setPreviousTerms((prevTerms) => [query, ...prevTerms]);
+
+    const gifs = await getGifsByQueryAction(query);
+    console.log({ gifs });
   };
 
   return (

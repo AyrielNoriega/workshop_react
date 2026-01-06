@@ -6,26 +6,24 @@ interface Props {
 }
 
 export const SearchBard = ({ placeholder, onQuery }: Props) => {
-
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       onQuery(query);
     }, 700);
-  
+
     return () => {
       clearTimeout(timeoutId);
-    }
+    };
   }, [query, onQuery]);
-  
 
   const handleSearch = () => {
     onQuery(query);
   };
 
   const handleKeydown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };

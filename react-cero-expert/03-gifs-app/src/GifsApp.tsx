@@ -1,8 +1,6 @@
 import { GifsList, PreviousSearches } from "./gifs/components";
-import { mockGifs } from "./mock-data/gifs.mock";
 import { CustomHeader, SearchBard } from "./shared/components";
 import { useGifs } from "./gifs/hooks";
-import type { Gif } from "./gifs/interfaces/gif.interface";
 
 export const GifsApp = () => {
   const { previousTerms, gifs, handleSearch, handleTermClick } = useGifs();

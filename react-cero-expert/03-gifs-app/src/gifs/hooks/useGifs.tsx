@@ -6,8 +6,9 @@ export const useGifs = () => {
   const [previousTerms, setPreviousTerms] = useState(["dragon ball z"]);
   const [gifs, setGifs] = useState<Gif[]>([]);
 
-  const handleTermClick = (term: string) => {
-    console.log({ term });
+  const handleTermClick = async (term: string) => {
+    const gifs = await getGifsByQueryAction(term);
+    setGifs(gifs);
   };
 
   const handleSearch = async (query: string) => {

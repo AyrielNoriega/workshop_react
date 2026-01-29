@@ -28,20 +28,23 @@ export const TrafficLightWithEffect = () => {
   useEffect(() => {
     if (countdown > 0) return;
 
-    switch (light) {
-      case "red":
-        setLight("green");
-        break;
-      case "green":
-        setLight("yellow");
-        break;
-      case "yellow":
-        setLight("red");
-        break;
-    }
+    // Usamos setTimeout para diferir el setState y evitar renderizados en cascada
+    const timeoutId = setTimeout(() => {
+      switch (light) {
+        case "red":
+          setLight("green");
+          break;
+        case "green":
+          setLight("yellow");
+          break;
+        case "yellow":
+          setLight("red");
+          break;
+      }
+      setCountdown(5); // Reinicia el temporizador
+    }, 0);
 
-    setCountdown(5); // Reinicia el temporizador
-    return;
+    return () => clearTimeout(timeoutId);
   }, [countdown, light]);
 
   return (

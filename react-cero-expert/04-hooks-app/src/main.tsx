@@ -4,10 +4,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 // import { HooksApp } from "./HooksApp";
 // import { TrafficLight } from "./01-useState/TrafficLight";
-import { TrafficLightWithEffect } from "./02-useEffect/TrafficLightWithEffect";
+// import { TrafficLightWithEffect } from "./02-useEffect/TrafficLightWithEffect";
+import { TrafficLightWithEffectWithHook } from "./02-useEffect/TrafficLightWithEffectWithHook";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <TrafficLightWithEffect />
+    <TrafficLightWithEffectWithHook />
   </StrictMode>,
 );

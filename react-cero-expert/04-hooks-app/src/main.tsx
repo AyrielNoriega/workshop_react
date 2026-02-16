@@ -6,10 +6,11 @@ import "./index.css";
 // import { TrafficLight } from "./01-useState/TrafficLight";
 // import { TrafficLightWithEffect } from "./02-useEffect/TrafficLightWithEffect";
 // import { TrafficLightWithEffectWithHook } from "./02-useEffect/TrafficLightWithEffectWithHook";
-import { PokemonPage } from "./03-examples/PokemonPage";
+// import { PokemonPage } from "./03-examples/PokemonPage";
+import { TasksApp } from "./05-useReducer/TaskApp";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <PokemonPage />
+    <TasksApp />
   </StrictMode>,
 );

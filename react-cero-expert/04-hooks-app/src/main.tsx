@@ -7,10 +7,12 @@ import "./index.css";
 // import { TrafficLightWithEffect } from "./02-useEffect/TrafficLightWithEffect";
 // import { TrafficLightWithEffectWithHook } from "./02-useEffect/TrafficLightWithEffectWithHook";
 // import { PokemonPage } from "./03-examples/PokemonPage";
-import { TasksApp } from "./05-useReducer/TaskApp";
+// import { TasksApp } from "./05-useReducer/TaskApp";
+import { ProfessionalApp } from "./09-useContext/ProfessionalApp";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <TasksApp />
+    {/* <TasksApp /> */}
+    <ProfessionalApp />
   </StrictMode>,
 );
